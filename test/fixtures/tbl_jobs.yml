@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: MyString
+  description: MyString
+  work_hour: MyString
+  salaray_per_hour: MyString
+
+two:
+  position: MyString
+  description: MyString
+  work_hour: MyString
+  salaray_per_hour: MyString

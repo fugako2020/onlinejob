@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .job-post {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 98%;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .job-post p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .job-post strong {
+            color: #0072b1;
+        }
+
+        .apply-link {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .apply-link a {
+            text-decoration: none;
+            background-color: #0072b1;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <a href="/home" class="back-button btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M12.354 4.354a.5.5 0 0 0 0-.708L9.707.146a.5.5 0 0 0-.708 0l-8 8a.5.5 0 0 0 0 .708l8 8a.5.5 0 0 0 .708 0l2.647-2.647a.5.5 0 0 0 0-.708L5.707 8l6.647-6.646z"/>
+    </svg></a>
+    <% @jobs.each do |job| %>
+        <div class="job-post">
+            <p><strong><%= job.position %></strong></p>
+            <p><%= job.description %></p>
+            <p><strong>Work Hours:</strong> <%= job.work_hour %></p>
+            <p><strong>Salary per Hour:</strong> <%= job.salaray_per_hour %></p>
+            <div class="apply-link">
+                <a href="/register?position=<%= job.position %>">Apply Now</a>
+            </div>
+        </div>
+    <% end %>
+</body>
+</html>

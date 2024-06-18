@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .job-post-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .job-post {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .job-post p {
+            margin: 0;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .job-post strong {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <br>
+        <a href="/admin_dashboard" class="back-button btn btn-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M12.354 4.354a.5.5 0 0 0 0-.708L9.707.146a.5.5 0 0 0-.708 0l-8 8a.5.5 0 0 0 0 .708l8 8a.5.5 0 0 0 .708 0l2.647-2.647a.5.5 0 0 0 0-.708L5.707 8l6.647-6.646z"/>
+            </svg>
+        </a>
+            <div class="job-post-container">
+                <% @myjobs.each do |job| %>
+                    <div class="job-post">
+                        <p><strong>Position: </strong><%= job.position %></p>
+                        <p><strong>description: </strong><%= job.description %></p>
+                        <p><strong>Work Hours: </strong> <%= job.work_hour %></p>
+                        <p><strong>Salary per Hour: </strong> <%= job.salaray_per_hour %></p>
+                    </div>
+                <% end %>
+            </div>
+    </body>
+</html>

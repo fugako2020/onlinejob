@@ -1,0 +1,2 @@
+class TblJob < ApplicationRecord
+end
